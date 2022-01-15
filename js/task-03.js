@@ -13,18 +13,22 @@ const images = [
   },
 ];
 
-const imagesRef = document.querySelector('.gallery');
+const galleryRef = document.querySelector('.gallery');
 
-imagesRef.insertAdjacentHTML
-  ('beforeend', `<li><img src= "${images[0].url}" alt= "${images[0].alt}" width="500" height="200"></li> 
-  <li><img src= "${images[1].url}" alt= "${images[1].alt}" width="500" height="200"></li>
-  <li><img src= "${images[2].url}" alt= "${images[2].alt}" width="500" height="200"></li>`);
-  
-  console.log(imagesRef);
+const galleryList = images.map((image) => `<li><img src= "${image.url}" alt= "${image.alt}" width="500" height="200"></li>`).join('');
 
-  
-// images.map(element => {
-//   imagesRef.insertAdjacentHTML
-//     ('beforeend', `<li><img src= "${element.url}" alt= "${element.alt}" width="500" height="200"></li>`);
-// console.log(imagesRef);
-// });
+galleryRef.insertAdjacentHTML('beforeend', galleryList)
+
+console.log(galleryList);
+
+
+
+// ----------------------ALT--------------------
+
+
+
+// imagesRef.insertAdjacentHTML.map
+//   ('beforeend', `<li><img src= "${images[0].url}" alt= "${images[0].alt}" width="500" height="200"></li> 
+//   <li><img src= "${images[1].url}" alt= "${images[1].alt}" width="500" height="200"></li>
+//   <li><img src= "${images[2].url}" alt= "${images[2].alt}" width="500" height="200"></li>`);
+//   console.log(imagesRef);
